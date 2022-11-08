@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:57:00 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/08 17:20:16 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:50:10 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 
 	i = 0;
-	substr_number = 0;
+	substr_number = substr_count(s, c);
 	if (!s)
 		return (NULL);
 	result = malloc((substr_number + 1) * sizeof(char *));
@@ -84,14 +84,14 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
-int	main(void)
-{
-	const char	*s = "hello,world,,,smafl";
-	char	**result = ft_split(s, ',');
-	for (; *result; result++)
-		printf("%s\n", *result);
-	return (0);
-}
+// int	main(void)
+// {
+// 	const char	*s = "hello,world,,,smafl";
+// 	char	**result = ft_split(s, ',');
+// 	for (; *result; result++)
+// 		printf("%s\n", *result);
+// 	return (0);
+// }
 
 // if *s == c -> s++
 // if *s != c -> start, len, substr
