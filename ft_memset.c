@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:57:15 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/21 16:22:10 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:40:57 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*pnt;
 
 	pnt = s;
-	if (!s)
-		return (NULL);
 	while (n > 0)
 	{
 		*pnt = (unsigned char) c;

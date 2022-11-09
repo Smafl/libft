@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:01:02 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/27 17:24:11 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:04:28 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (pnt_s1[i] != pnt_s2[i])
 		{
-			return ((unsigned char)pnt_s1[i] - (unsigned char)pnt_s2[i]);
+			return (pnt_s1[i] - pnt_s2[i]);
 		}
 		i++;
 	}

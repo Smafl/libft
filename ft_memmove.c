@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:48:32 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/26 13:25:08 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:16:16 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	pnt_dst = (char *)dst;
 	pnt_src = (const char *)src;
 	i = 0;
-	if (!dst || !src || n == 0)
+	if (n == 0)
 		return (dst);
 	if (pnt_dst < pnt_src)
 	{

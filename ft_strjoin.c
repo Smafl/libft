@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:29:26 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/01 14:11:40 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:23:32 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	result = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
-	if (!result)
+	if (result == NULL)
 		return (NULL);
 	ft_strlcpy(result, s1, len_s1 + 1);
 	ft_strlcat(result, s2, (len_s1 + len_s2 + 1));

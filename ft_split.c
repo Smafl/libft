@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:57:00 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/08 17:50:10 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:22:00 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static int	substr_count(const char *s, char c)
 
 	substr_number = 0;
 	flag = 0;
+	if (!s)
+		return (0);
 	while (*s)
 	{
 		if (*s == c)
@@ -35,46 +37,51 @@ static int	substr_count(const char *s, char c)
 	return (substr_number);
 }
 
-static void	mem_free(char **array)
+static char	**mem_free(char **array)
 {
-	while (*array)
+	char	**cursor;
+
+	cursor = array;
+	while (*cursor)
 	{
-		free(*array);
-		array++;
+		free(*cursor);
+		cursor++;
 	}
 	free(array);
+	return (NULL);
+}
+
+static size_t	get_word_length(char const **s, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (**s != c && **s != '\0')
+	{
+		len++;
+		(*s)++;
+	}
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
-	size_t	substr_number;
 	char	**result;
 
 	i = 0;
-	substr_number = substr_count(s, c);
-	if (!s)
-		return (NULL);
-	result = malloc((substr_number + 1) * sizeof(char *));
-	if (!result)
+	result = malloc((substr_count(s, c) + 1) * sizeof(char *));
+	if (result == NULL)
 		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
 		{
-			len = 0;
-			while (*s != c && *s != '\0')
-			{
-				len++;
-				s++;
-			}
+			len = get_word_length(&s, c);
 			result[i] = ft_substr(s - len, 0, len);
-			if (!result[i])
-			{
-				mem_free(result);
-				return (NULL);
-			}
+			if (result[i] == NULL)
+				return (mem_free(result));
 			i++;
 		}
 		else
@@ -83,15 +90,6 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	const char	*s = "hello,world,,,smafl";
-// 	char	**result = ft_split(s, ',');
-// 	for (; *result; result++)
-// 		printf("%s\n", *result);
-// 	return (0);
-// }
 
 // if *s == c -> s++
 // if *s != c -> start, len, substr

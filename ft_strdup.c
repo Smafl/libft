@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:54:19 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/26 17:22:05 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:01:31 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ char	*ft_strdup(const char *s1)
 	char	*str_dup;
 
 	pnt_s1 = (char *)s1;
-	if (!pnt_s1)
-		return (NULL);
 	len = ft_strlen(pnt_s1);
-	str_dup = malloc(sizeof(char) * len + 1);
+	str_dup = malloc(sizeof(char) * (len + 1));
 	if (str_dup == NULL)
 		return (NULL);
-	ft_memcpy(str_dup, pnt_s1, len);
-	str_dup[len] = '\0';
+	ft_memcpy(str_dup, pnt_s1, sizeof(char) * (len + 1));
 	return (str_dup);
 }

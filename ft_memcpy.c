@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:43:42 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/21 18:16:29 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:23:58 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	pnt_src = src;
 	pnt_dst = dst;
 	i = 0;
+	if (dst == src)
+		return (dst);
 	while (i < n)
 	{
 		pnt_dst[i] = pnt_src[i];

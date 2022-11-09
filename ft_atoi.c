@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:49:25 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/29 14:07:18 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:51:17 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,7 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
+/*
+INT_MIN -2147483648
+*/

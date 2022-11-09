@@ -6,7 +6,7 @@
 #    By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 18:42:22 by ekulichk          #+#    #+#              #
-#    Updated: 2022/11/08 17:41:29 by ekulichk         ###   ########.fr        #
+#    Updated: 2022/11/08 20:05:15 by ekulichk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): $(SRC) $(OBJ)
+$(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(NAME) $(BONUS_OBJ)

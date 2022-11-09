@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:14:21 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/27 17:29:50 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:52:24 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	haystack_i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	if (!haystack || !needle)
+	if (haystack[0] == '\0' || len == 0)
 		return (NULL);
-	while (haystack_i <= len && haystack[haystack_i])
+	while (haystack_i < len && haystack[haystack_i])
 	{
 		needle_i = 0;
 		while (haystack[haystack_i + needle_i] == needle[needle_i]
@@ -39,6 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 
 /*
+! check needle at first, there is no need to check it enymore 
 1) haystack and needle are empty → haystack
 2) needle is empty → haystack
 3) haystack is empty (needle is not empty) → null
