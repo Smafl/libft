@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:51:31 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 17:25:49 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:41:44 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	len_s;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	len_s = ft_strlen(s);
 	if (len_s - start < len)

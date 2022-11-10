@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:27:17 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 17:14:40 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:34:19 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	while ((char)*s != (char)c)
 	{
-		if (*s == '\0')
+		if ((char)*s == '\0')
 			return (NULL);
 		s++;
 	}

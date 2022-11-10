@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:22:51 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 14:24:03 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:50:26 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*result;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	result = malloc(len + 1);

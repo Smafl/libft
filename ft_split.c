@@ -6,22 +6,20 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:57:00 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 14:22:00 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:45:14 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	substr_count(const char *s, char c)
+static int	get_substr_number(const char *s, char c)
 {
 	size_t	substr_number;
 	int		flag;
 
 	substr_number = 0;
 	flag = 0;
-	if (!s)
-		return (0);
 	while (*s)
 	{
 		if (*s == c)
@@ -70,8 +68,10 @@ char	**ft_split(char const *s, char c)
 	size_t	len;
 	char	**result;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
-	result = malloc((substr_count(s, c) + 1) * sizeof(char *));
+	result = malloc((get_substr_number(s, c) + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	while (*s)
@@ -90,10 +90,6 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
-
-// if *s == c -> s++
-// if *s != c -> start, len, substr
-// s = s + len
 
 /*
 0       int, char, unsigned int, short, ..., float, double, ...

@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:05:34 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/08 15:13:54 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:51:02 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp_next;
 
-	if (!*lst)
+	if (lst == NULL || del == NULL)
 		return ;
 	while (*lst)
 	{

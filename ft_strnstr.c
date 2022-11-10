@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:14:21 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 17:52:24 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:10:41 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	needle_i;
 
 	haystack_i = 0;
+	if (haystack == NULL && len == 0)
+		return (NULL);
 	if (needle[0] == '\0')
 		return ((char *)haystack);
 	if (haystack[0] == '\0' || len == 0)

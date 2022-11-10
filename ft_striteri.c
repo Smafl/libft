@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:09:52 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/10/29 19:19:03 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:35:14 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (*s)
 	{
