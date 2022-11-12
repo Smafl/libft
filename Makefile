@@ -6,7 +6,7 @@
 #    By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 18:42:22 by ekulichk          #+#    #+#              #
-#    Updated: 2022/11/08 20:05:15 by ekulichk         ###   ########.fr        #
+#    Updated: 2022/11/12 17:53:29 by ekulichk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,15 +72,18 @@ fclean: clean
 re: fclean all
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 bonus: $(NAME) $(BONUS_OBJ)
 	ar -rcs $(NAME) $(BONUS_OBJ)
 
-# all - compile starter
+# all - compile starter (execute other rules)
 
 # CFLAGS is used automatically
 
 # ar -rcs adds files in archve and replace them
 # if they have already been there
+# (if the library already exists)
+# c creates the library if there is no one
+# s creates a sorted index
 # that's why we can call ar -rcs again and add there bonus obj files

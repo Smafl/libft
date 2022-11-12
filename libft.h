@@ -6,7 +6,7 @@
 /*   By: ekulichk <ekulichk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:37:43 by ekulichk          #+#    #+#             */
-/*   Updated: 2022/11/09 17:33:28 by ekulichk         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:06:40 by ekulichk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,8 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 #endif
+
+/*
+That prevents double declaration of any identifiers such as types,
+enums and static variables, recursive inclusions
+*/
