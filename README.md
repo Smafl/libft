@@ -1,3 +1,3 @@
 # libft
 
-Self implementation of functions from libc. They hve the same behaviors as the originals.
+Self implementation of functions from libc. They have the same behaviors as the originals.
